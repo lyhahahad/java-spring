@@ -1,3 +1,6 @@
+12/31 : https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/overview.html ,@RestController 등 예시 코드에 나오는 주석 분석, https://www.youtube.com/watch?v=RP_f5dMoHFc = restful 깊이 있게 이해
+
+
 *spring 프로젝트 생성하기 : https://start.spring.io/
 -프로젝트 관리 도구 선택 maven vs gradle 
 maven : POM.XML파일을 통해 정형화된 빌드 시스템으로 관리.
@@ -24,3 +27,29 @@ gradle 선택 이유
 2.최신 빌드 툴이고 점유율이 상승하고 있다.
 3.빌드 관리를 groovy로 하기 때문에 짧고 가독성이 높다.
 4.maven에 비해 10~100배 빠르다.
+
+-기본 예시 코드 분석
+@RequestController : 메소드 매개변수가 웹 요청 매개변수에 바인딩되어야 함을 나타내는 주석.
+@GetMapping : get 요청을 특정 처리기 메서드에 매핑하기 위한 주석.
+@RestController : Controller, ResponseBody 주석이 포함된 주석.
+
+*Building a RESTful Web Service
+-RESTful api? https://www.youtube.com/watch?v=RP_f5dMoHFc
+http url을 통해 http method인 post(추가), get(취득), put(갱신), delete(삭제) CRUD OPERATION 적용.
+REST는 자원 기반 구조 설계의 중심에 리소스가 있고 HTTPMETHOD를 통해 리소스를 처리할 수 있도록 한다.
+RESTful을 사용하는 모바일, PC 등 플랫폼에 제약을 두지 않기 때문이다.
+구성 : URL(자원), HTTP METHOD(행위), 표현
+JSON, XML, TEXT, RSS등 여러 표현 방식이 있지만 주로 JSON사용.
+특징 1.무상태성 : 상태정보를 기억할 필요없고 들어온 요청만 처리해주면됨.
+     2. 캐시 처리 가능.
+     3. 자체 표현 구조.
+     4. 계층화.
+     5. 유니폼 인텊페이스.
+규칙 1. URL은 정보의 자원을 표현해야 한다.
+     2. 자원에 대한 행위는 HTTPMETHOD로 표현한다.
+설계 목표 1. 컴포넌트간 유연한 상호 연동성 확보.
+         2. 범용 인터페이스
+         3. 각 컴포넌트의 독립적인 배포
+         4. 지연감소, 보안강화
+
+GRAPH QL과 같은 대체 아키텍쳐가 존재한다.
