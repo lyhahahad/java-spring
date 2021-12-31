@@ -1,55 +1,15 @@
-12/31 : https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/overview.html ,@RestController 등 예시 코드에 나오는 주석 분석, https://www.youtube.com/watch?v=RP_f5dMoHFc = restful 깊이 있게 이해
-
-
 *spring 프로젝트 생성하기 : https://start.spring.io/
--프로젝트 관리 도구 선택 maven vs gradle 
-maven : POM.XML파일을 통해 정형화된 빌드 시스템으로 관리.
-        POM.XML은 프로젝트의 모든 설정, 의존성 등을 설정할 수 있다.
-        많은 라이브러리를 활용해 개발할 때 라이브러리 관리에 용이하다.
-        정해진 빌드 방법을 사용하기 때문에 협업에 용이.
-        라이프 사이클 : COMPILE->TEST->PACKAGE(구체적으로는 더 많은 과정이 있음.)
-        다양한 플러그인을 통해 많은 작업이 자동화됨.
-        네트워크를 통해 연관된 라이브러리까지 같이 업데이트 해준다.
-        
-gradle : 빌드 배포 도구로 안드로이드 앱을 만들 때 필요한 공식 빌드 시스템이다.
-         maven 이후에 나온 툴로 groovy언어를 기반으로 만들어졌다.
-         maven은 xml기반으로 빌드를 처리하는데 
-         gradle은 java와 거의 비슷한 코드를 쓰는 groovy를 통해 빌드를 처리 관리할 수 있다.
-         확장성도 뛰어나고 훨씬 적은 양의 스크립트로 짧고 간결하게 작성이 가능하다.
-         빌드 속도는 10~100배 정도 더 빠르다.
-         maven의 경우에는 멀티 프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 상속을 받아야 한다.
-         반면 gradle은 설정 주입 방식을 사용하기 때문에 멀티 프로젝트에 적합하다.
-         멀티 프로젝트는 하나의 루트 프로젝트와 하나 이상의 하위 프로젝트로 구성되는 프로젝트를 의미한다.
-         참고 자료 : https://docs.gradle.org/current/userguide/multi_project_builds.html
-
+*프로젝트 관리 도구 선택 maven vs gradle 
 gradle 선택 이유
 1.다양한 하위 프로젝트들을 생성한다.
 2.최신 빌드 툴이고 점유율이 상승하고 있다.
 3.빌드 관리를 groovy로 하기 때문에 짧고 가독성이 높다.
 4.maven에 비해 10~100배 빠르다.
 
--기본 예시 코드 분석
+*기본 예시 코드 분석
 @RequestController : 메소드 매개변수가 웹 요청 매개변수에 바인딩되어야 함을 나타내는 주석.
 @GetMapping : get 요청을 특정 처리기 메서드에 매핑하기 위한 주석.
 @RestController : Controller, ResponseBody 주석이 포함된 주석.
 
 *Building a RESTful Web Service
--RESTful api? https://www.youtube.com/watch?v=RP_f5dMoHFc
-http url을 통해 http method인 post(추가), get(취득), put(갱신), delete(삭제) CRUD OPERATION 적용.
-REST는 자원 기반 구조 설계의 중심에 리소스가 있고 HTTPMETHOD를 통해 리소스를 처리할 수 있도록 한다.
-RESTful을 사용하는 모바일, PC 등 플랫폼에 제약을 두지 않기 때문이다.
-구성 : URL(자원), HTTP METHOD(행위), 표현
-JSON, XML, TEXT, RSS등 여러 표현 방식이 있지만 주로 JSON사용.
-특징 1.무상태성 : 상태정보를 기억할 필요없고 들어온 요청만 처리해주면됨.
-     2. 캐시 처리 가능.
-     3. 자체 표현 구조.
-     4. 계층화.
-     5. 유니폼 인텊페이스.
-규칙 1. URL은 정보의 자원을 표현해야 한다.
-     2. 자원에 대한 행위는 HTTPMETHOD로 표현한다.
-설계 목표 1. 컴포넌트간 유연한 상호 연동성 확보.
-         2. 범용 인터페이스
-         3. 각 컴포넌트의 독립적인 배포
-         4. 지연감소, 보안강화
-
-GRAPH QL과 같은 대체 아키텍쳐가 존재한다.
+-restful api는 'rest api 집중 학습'에서 학습.
