@@ -1,5 +1,5 @@
 12/31 : https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/overview.html ,@RestController 등 예시 코드에 나오는 주석 분석, https://www.youtube.com/watch?v=RP_f5dMoHFc = restful 깊이 있게 이해
-
+1/1~1/2 : https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 
 *spring 프로젝트 생성하기 : https://start.spring.io/
 -프로젝트 관리 도구 선택 maven vs gradle 
