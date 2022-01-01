@@ -10,7 +10,7 @@ rest를 만들게 된 계기 : "how do i improve http without breaking the web."
 그런 rest api로 괜찮은가?
 -어떤 이유로 나왔는가?
 1.어떻게 인터넷에서 정보를 공유할 것인가?
-=>정보들을 하이퍼 텍스트로 연결한다. http, html, usi.
+=>정보들을 하이퍼 텍스트로 연결한다. http, html, uri.
 =>http를 수정하면 기존의 웹하고 호환성 문제 생김.
 =>http object model을 통해 그 문제를 해결함.
 =>이것이 rest가 됨.(2000년에 논문으로 나옴.)
@@ -34,7 +34,7 @@ soap vs rest
 rest 아키텍쳐를 따르는 api
 아키텍쳐 스타일은 제약 조건의 집합.
 rest는 어떤 제약 조건으로 구성돼 있는가?
--클라이언트 서버, stateless, cache, uniform interface, layered system, code-on-demand(optional)
+-클라이언트 서버, stateless, cache, uniform interface, layered system, code-on-demand(optional, ex) javascript)
 uniform interface를 만족하는 것이 힘듦.
 
 4.uniform interface의 제약 조건
