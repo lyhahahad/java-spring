@@ -19,11 +19,41 @@ InetAddress의 인스턴스는 IP 주소와 가능한 해당 호스트 이름으
 
 -urlconnection은 어플리케이션과 url간의 통신연결을 나타내는 최상위 클래스로 추상클래스임.
 https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html
-상속받아 구현한 클래스로는 HttpURLConnection과 JarURLConnection이 있으며 
-URL의 프로토콜이 http프로토콜이라면 openConnection()은 Http URLConnection을 반환한다.
-BefferedReader = html코드 읽어옴.
-문자 입력 스트림에서 텍스트를 읽고 문자, 배열 및 행을 효율적으로 읽을 수 있도록 문자를 버퍼링합니다.
-FileOutputStream 이미지 데이터와 같은 원시 바이트 스트림을 쓰기 위한 것입니다. 문자 스트림을 작성하려면 FileWriter.
+urlconnection은 애플리케이션과 url간의 통신 링크를 나타내는 모든 클래스의 수퍼 클래스이다.
+이 클래스의 인스턴스를 사용하면 url에서 참조하는 리소스를 읽고 쓸 수 있다.
+하위 클래스 : HttpURLConnection , JarURLConnection.
+
+url연결 순서는 1. openconnection() 2. connect()이다.
+openconnection은 원격 리소스에 대한 연결에 영향을 주는 매개변수를 조작한다.
+connect는 리소스와 상호작용한다. 쿼리 헤더 필드 및 콘텐츠
+---연결 준비 과정---
+1.연결 개체는 openconnectionurl에서 메서드를 호출하여 생성됨.
+2. 설정 매개변수 및 일반 요청 속성이 조작된다.
+사용되는 메서드
+setAllowUserInteraction
+setDoInput
+setDoOutput
+setIfModifiedSince
+setUseCaches
+setRequestProperty : 
+디폴트 벨류인 AllowUserInteraction, UseCaches는 setDefaultAllowUserInteraction, setDefaultUseCaches에 의해 수정될 수 있다.
+
+---실제 연결 과정---
+3. connect 메서드를 사용하여 원격 개체에 대한 실제 연결이 이루짐.
+4. 원격 개체를 사용할 수 있게 됨. 헤더 필드와 원격 개체의 내용에 엑세스할 수 있음.
+사용되는 메서드들
+getContent
+getHeaderField
+getInputStream
+getOutputStream
+getContentEncoding
+getContentLength
+getContentType
+getDate
+getExpiration
+getLastModifed
+
+close() : 요청 후 URLConnection의 InputStream 또는 OutputStream에서 close() 메서드를 호출하면 네트워크 리소스를 확보할 수 있다.
 
 -소켓 프로그래밍
 양방향 통신에서 양끝단으로 tcp/ip 단에서 구분할 수 있는 하나의 포트 번호 가짐.
