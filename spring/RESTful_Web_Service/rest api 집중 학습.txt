@@ -1,5 +1,14 @@
 https://www.youtube.com/watch?v=RP_f5dMoHFc
 
+*5줄 요약
+rest api는 http의 독립적인 진화를 위해 만들어졌다.
+현재의 rest api들은 api의 json에 의해 self-descriptive와 hateoas를 만족하지 못하는 경우가 많다.
+self-descriptive란 json의 키값이 무엇을 의미하는지 명확하지 않아 발생하는데 이는 명세를 만들어 해결할 수 있다.
+hateoas는 json에 하이퍼링크 명세가 없어 발생하는데 이 또한 명세를 만들어 해결할 수 있다.
+api와 달리 웹이 위의 두가지 성질을 만족하는 이유는 html은 모든 것이 명세에 기록돼 해석이 가능하고 하이퍼 링크로 late binding이 가능하기 때문이다.
+
++a hateoas 추가학습
+
 *하이라이트
 uniform interface가 필요한 이유 : 독립적 진화
 독립적 진화 : 서버와 클라이언트가 각각 독립적으로 진화한다.

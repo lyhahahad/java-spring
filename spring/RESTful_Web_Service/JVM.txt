@@ -19,3 +19,6 @@ native method stack : 자바외 언어로 작성된 네이티브 코드를 위�
 4.execution engine가 메모리에 적재된 클래스들을 기계어로 변경해 명령어 단위로 실행한다.
 execution engine는 명령어를 하나하나 실행하고 자주 쓸만한 코드를 기계어로 변환 시켜 저장한다.(jit 방식)
 5.heap 메모리 영역에 생성된 객체들 중 reachability를 잃은 객체를 탐색후 제거한다.
+
+-classloader
+
