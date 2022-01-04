@@ -64,3 +64,4 @@ close() : 요청 후 URLConnection의 InputStream 또는 OutputStream에서 clos
 -소켓 프로그래밍
 양방향 통신에서 양끝단으로 tcp/ip 단에서 구분할 수 있는 하나의 포트 번호 가짐.
 java.net 패키지에서 소켓 클래스 제공.
+
