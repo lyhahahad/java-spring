@@ -1,0 +1,1 @@
+Process 'command 'C:/Program Files/AdoptOpenJDK/jdk-11.0.8.10-hotspot/bin/java.exe'' finished with non-zero exit value 1
