@@ -11,10 +11,6 @@ import org.springframework.boot.SpringApplication;
 @RestController
 public class GreetingController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(GreetingController.class, args);
-    }
-
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
