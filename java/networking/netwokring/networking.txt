@@ -25,6 +25,8 @@ InetAddress 캐싱 : 해당 클래스는 성공한 호스트 이름 확인과 �
 
 -url : 여러 서버들이 제공하는 자원에 접근할 수 있는 주소.
 자바에 url 클래스로 다룰 수 있음.
+클래스 URL는 World Wide Web의 "리소스"에 대한 포인터인 Uniform Resource Locator를 나타냅니다.
+url 클래스의 메서드에는 호스트이름, 파일이름, 포트 번호, 경로 등을 가져오는 것 + 커넥션하는 기능이 있다.
 
 -urlconnection은 어플리케이션과 url간의 통신연결을 나타내는 최상위 클래스로 추상클래스임.
 https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html
