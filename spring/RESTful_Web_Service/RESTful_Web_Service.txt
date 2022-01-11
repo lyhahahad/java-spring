@@ -6,13 +6,18 @@ gradle 선택 이유
 3.빌드 관리를 groovy로 하기 때문에 짧고 가독성이 높다.
 4.maven에 비해 10~100배 빠르다.
 
-*기본 예시 코드 분석
-@RestController :  @Controller + @ResponseBody
-@Controller : 이 주석은 @Component구현 클래스가 클래스 경로 스캐닝을 통해 자동 감지되도록 하는 전문화 역할을 합니다. 
-일반적으로 주석을 기반으로 하는 RequestMapping주석 처리기 메서드와 함께 사용됩니다 .
-@ResponseBody : 메서드 반환 값을 나타내는 주석은 웹 응답 본문에 바인딩되어야 합니다. 주석 처리기 메서드에 대해 지원됩니다.
+*sping rest api 기본 구조.
+@SpringBootApplication
+SpringApplication.run(RestServiceApplication.class, args)
+=>RestServiceApplication 만들어진 어플리케이션을 실행하는 코드
 
-@GetMapping : get 요청을 특정 처리기 메서드에 매핑하기 위한 주석.
+@RestController
+@GetMapping("/greeting")
+public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    return new Greeting(counter.incrementAndGet(), String.format(template, name));
+}
+=>rest api구조로 '/greeting'에 greeting 메서드를 매칭시킨다.
+=>get 방식으로 접근해오면 @RequestParam 파라미터를 받아 return 더 정확히는 response 해준다.
 
 *Building a RESTful Web Service
 -restful api는 'rest api 집중 학습'에서 학습.
