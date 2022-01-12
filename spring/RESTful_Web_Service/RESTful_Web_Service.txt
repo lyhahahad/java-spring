@@ -1,4 +1,18 @@
 *spring 프로젝트 생성하기 : https://start.spring.io/
+*하이라이트
+1.rest api spring 기본 구조 : 
+@SpringBootApplication에서 애플리케이션 실행, main에서 run함수 실행함, 
+ioc의 특징이 잘 드러나는 곳 main에서 실행흐름을 컨트롤하지 않는다.
+@RestController : , @GetMapping("/greeting") : get url 생성, 
+@GetMapping("/greeting")->@RequestParam(value = "name", defaultValue = "World") String name : name 값을 url에서 받아옴. 값이 없을 경우 name에 world가 됨.
+@RestController에서 return을 개별 클래스 파일로 하면 json형식으로 반환됨.
+-main이 있는 class : @SpringBootApplication
+-개별 class
+-0000Controller : @RestController, @GetMapping("/greeting")->@RequestParam(value = "name", defaultValue = "World") -개별 class반환
+
+
+
+
 *프로젝트 관리 도구 선택 maven vs gradle 
 gradle 선택 이유
 1.다양한 하위 프로젝트들을 생성한다.
