@@ -1,5 +1,8 @@
 package com.example.netwokring;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.*;
 import java.util.*;
 public class NetwokringApplication {
@@ -48,6 +51,46 @@ public class NetwokringApplication {
 			}
 		}
 		catch(UnknownHostException e){
+			e.printStackTrace();
+		}
+
+		try {
+			URL url = new URL("https://news.daum.net/");
+
+			System.out.println("url.getAuthority() :" + url.getAuthority());
+			System.out.println("url.getContent() :" + url.getContent().toString());
+			System.out.println("url.getDefaultPort() :" + url.getDefaultPort());
+			System.out.println("url.getPort() :" + url.getPort());
+			System.out.println("url.getFile() :" + url.getFile());
+			System.out.println("url.getHost() :" + url.getHost());
+			System.out.println("url.getPath() :" + url.getPath());
+			System.out.println("url.getProtocol() :" + url.getProtocol());
+			System.out.println("url.getQuery() :" + url.getQuery());
+			System.out.println("url.getRef() :" + url.getRef());
+			System.out.println("url.getUserInfo() :" + url.getUserInfo());
+			System.out.println("url.toExternalForm() :" + url.toExternalForm());
+			System.out.println("url.toURI() :" + url.toURI());
+
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		URL url = null;
+		BufferedReader input = null;
+		String address = "http://www.codechobo.com";
+		String line = "";
+		try {
+			url = new URL(address);
+			input = new BufferedReader(new InputStreamReader(url.openStream()));
+
+			while ((line = input.readLine()) != null){
+				System.out.println(line);
+			}
+			input.close();
+
+		} catch (MalformedURLException ex) {
+			ex.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
