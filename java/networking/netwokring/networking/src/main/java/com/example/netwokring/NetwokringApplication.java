@@ -8,7 +8,7 @@ import java.util.*;
 public class NetwokringApplication {
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException {
 		InetAddress ip = null;
 		InetAddress[] ipArr = null;
 
@@ -93,6 +93,5 @@ public class NetwokringApplication {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }
