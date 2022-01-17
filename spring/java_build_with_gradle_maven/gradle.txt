@@ -14,3 +14,8 @@ gradle은 java, groovy, scala, maven 빌드를 지원한다.
 프로젝트 폴더를 만들고
 프로젝트를 초기화하고
 build.gradle을 수정한다./
+
+1.gradle init = gradle 기초 셋업
+2.build.gradle 생성됨. apply plugin: 'java' 추가
+3.gradle build ->build 폴더 생성 컴파일된 파일이 있는 classes 폴더에 저장됨.
+테스트 보고서 reports 폴더에 생성, libs에 조립된 프로젝트 라이브러리 생성.
