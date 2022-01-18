@@ -72,7 +72,18 @@ getLastModifed
 
 close() : 요청 후 URLConnection의 InputStream 또는 OutputStream에서 close() 메서드를 호출하면 네트워크 리소스를 확보할 수 있다.
 
+catch(MalformedURLException e){
+			System.out.println("the url address is in correct");
+			e.printStackTrace();
+		}catch (IOException e){
+			System.out.println("it can't connect to the web page");
+			e.printStackTrace();
+		}
+MalformedURLException는 url 주소가 잘못됐을 경우.
+IOException는 웹페이지에 접속할 수 없을 때 발생한다.
+
 -소켓 프로그래밍
 양방향 통신에서 양끝단으로 tcp/ip 단에서 구분할 수 있는 하나의 포트 번호 가짐.
 java.net 패키지에서 소켓 클래스 제공.
 
+-

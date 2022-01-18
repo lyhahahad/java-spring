@@ -2,13 +2,14 @@ package com.example.netwokring;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.util.*;
 public class NetwokringApplication {
 
 
-	public static void main(String[] args) throws MalformedURLException {
+	public static void main(String[] args) throws IOException {
 		InetAddress ip = null;
 		InetAddress[] ipArr = null;
 
@@ -93,5 +94,29 @@ public class NetwokringApplication {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		try{
+			URL url_1 = new URL("https://www.naver.com/");
+			URLConnection conn = url_1.openConnection();
+			InputStream is = conn.getInputStream();
+			Scanner scan = new Scanner(is);
+
+			int lines = 1;
+			while(scan.hasNext()){
+				String str = scan.nextLine();
+				System.out.println((lines++)+":"+str);
+			}
+			scan.close();
+
+		} catch(MalformedURLException e){
+			System.out.println("the url address is in correct");
+			e.printStackTrace();
+		}catch (IOException e){
+			System.out.println("it can't connect to the web page");
+			e.printStackTrace();
+		}
+
+
+
 	}
 }
