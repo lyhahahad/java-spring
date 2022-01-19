@@ -1,0 +1,13 @@
+cannot resolve symbol.
+https://stackoverflow.com/questions/25706216/what-does-a-cannot-find-symbol-or-cannot-resolve-symbol-error-mean
+'심볼을 확인할 수 없음.'
+원인
+cannot find symbol은 식별자와 관련된 오류이다.
+식별자는 클래스명, 변수명, 함수명을 의미한다.
+코드가 컴파일 될 때 컴파일러는 소스코드의 식별자들이 어떤 의미를 가지는 해석한다.
+이 작업을 할 수 없는 경우 해당 오류가 출력된다.
+
+
+해결방법
+1.rebuild
+2.
