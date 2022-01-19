@@ -29,3 +29,29 @@ build.gradle을 수정한다./
 지금 프로젝트를 빌드하기 위해 실행했다면 gradle build빌드에서 Joda Time을 컴파일 종속성으로 선언하지 않았기 때문에 빌드가 실패합니다.
 우선 타사 라이브러리에 대한 소스를 추가해야 합니다.
 
+https://willbesoon.tistory.com/93
+gradle 구조.
+1. /.gradle, /gradle = gradle 버전별 엔진 및 설정 파일.
+2. /.idea = 에디터 관련 파일들.
+3. /gradlew, /gradlew.bat = gradle 명령 파일.
+4. settings.gradle = 빌드할 프로젝트 정보 설정.
+5. build.gradle = 프로젝트 빌드에 대한 모든 기능 정의.
+6. /src = 자바 소스 파일.
+
+build life cycle
+1.initialization : 빌드 대상 프로젝트를 결정하고 각각에 대한 프로젝트 객체를 생성.
+setting.gradle 파일에서 프로젝트 구성(멀티 프로젝트, 싱글 프로젝트 구분/ 싱글 프로젝트의 경우 생략 가능)
+2.configuration : 빌드 대상이 되는 모든 프로젝트의 빌드 스크립트 실행
+3.execution : 구성 단계에서 생성하고 설정된 프로젝트의 태스크 중에 실행 대상 결정.(main에서 조절?)
+
+plugin 설정
+plugin은 미리 구성해 놓은 task들의 그룹이며 특정 빌드 과정에 필요한 기본정보를 포함하고 필요에 따라 정보를 수정하여 목적에 맞게 사용할 수 있다.
+
+build.gradle
+-dependencies
+implementation : 프로젝트 컴파일 과정에서 필요한 라이브러리.
+providedcompile : 컴파일시에는 필요하지만 배포시에는 제외될 수 있는 dependency를 설정한다.
+providedruntime : runtime시에만 필요하고 실행 환경에서 제공되는 dependency를 설정한다.
+testimplementation : test시에 필요한 dependency 관리.
+
+https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_plugin_and_dependency_management
