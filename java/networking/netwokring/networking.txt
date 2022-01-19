@@ -2,7 +2,17 @@
 InetAddress : ip 주소
 URL : URL 정보
 URLConnection : URL에 연결해서 정보 받아오기.
-
+1.URL 객체 생성
+URL url = new URL(address)
+2.URL에서 URLConnection 객체 얻기.
+URLConnection애서 openConnection 메서드 호출
+만약 주소가 http일 경우에는 HttpURLConnection으로 캐스팅한다.
+openConnection은 실제 네트워크 연결이 아니라 클래스 인스턴스 생성이다. 
+connect 메서드를 호출해야 실제적으로 연결된다.(명시적)
+헤더 필드, 입력스트림/출력스트림 호출시 연결된다.(암시적)
+URLConnection의 setter 메서들은 경우 연결이 이미 설정된 경우에 illegalstateexception을 발생시킨다.
+출력스트림은 서버에 데이터를 보낼 때 사용됨.
+연결을 종료하기 위해서는 입력, 출력 스트림 객체에서 close를 호출하면 된다.
 
 *네트워킹 : 두대 이상의 컴퓨터를 연결하여 네트워크를 구성하는 것.
 -클라이언트/서버
