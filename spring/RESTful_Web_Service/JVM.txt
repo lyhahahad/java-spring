@@ -87,5 +87,9 @@ pc(프로그램 카운터) : 각 스레드는 어떤 메서드를 항상 실행�
 -operand stack : 
 ->execution engine<->네이티브 메서드 인터페이스<->네이티브 메서드 라이브러리
 
--스택/ 힙
-스택 : 
+-스택과 프레임.
+stack과 frame?
+jvm이 실행될 때 스레드 별로 스택이 만들어지고 스택에는 메서드가 호출될 때마다 상태 정보를 저장하는 프레임이 들어간다.
+스레드가 쓸 수 있는 스택의 사이즈를 넘기게 되면 StackOverflowError가 발생한다.
+스택 사이즈를 동적으로 확장할 수도 있는데 확장할 메모리가 부족하거나, 새로운 스레드를 만들 때 필요한 새로운 스택에 할당할 메모리가 부족하면 OutOfMemoryError가 발생한다.
+프레임 : 로컬 변수 + operand stack + Constant Pool Reference
