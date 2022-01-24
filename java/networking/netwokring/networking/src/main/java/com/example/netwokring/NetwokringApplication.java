@@ -7,116 +7,35 @@ import java.io.InputStreamReader;
 import java.net.*;
 import java.util.*;
 public class NetwokringApplication {
-
-
 	public static void main(String[] args) throws IOException {
-		InetAddress ip = null;
-		InetAddress[] ipArr = null;
-
-		try{
-			ip = InetAddress.getByName("www.daum.net");
-			System.out.println("getHostName() :" + ip.getHostName());
-			System.out.println("getHostAddress() :" + ip.getHostAddress());
-			System.out.println("toString() :" + ip.toString());
-
-			byte[] ipAddr = ip.getAddress();
-			System.out.println("getAddress() :" + Arrays.toString(ipAddr));
-
-			String result = "";
-			for (int i=0; i < ipAddr.length; i++) {
-				result += (ipAddr[i] < 0) ? ipAddr[i] + 256 : ipAddr[i];
-				result += ".";
-			}
-			System.out.println("getAddress() + 256 :" + result);
-			System.out.println();
-		}
-		catch(UnknownHostException e){
-			e.printStackTrace();
-		}
-
-		try{
-			ip = InetAddress.getLocalHost();
-			System.out.println("getHostName() :" + ip.getHostName());
-			System.out.println("getHostAddress() :" + ip.getHostAddress());
-			System.out.println();
-		}
-		catch(UnknownHostException e){
-			e.printStackTrace();
-		}
-
-		try{
-			ipArr = InetAddress.getAllByName("www.daum.net");
-
-			for (int i=0; i < ipArr.length; i++) {
-				System.out.println("ipArr["+i+"]" + ipArr[i]);
-			}
-		}
-		catch(UnknownHostException e){
-			e.printStackTrace();
-		}
-
-		try {
-			URL url = new URL("https://news.daum.net/");
-
-			System.out.println("url.getAuthority() :" + url.getAuthority());
-			System.out.println("url.getContent() :" + url.getContent().toString());
-			System.out.println("url.getDefaultPort() :" + url.getDefaultPort());
-			System.out.println("url.getPort() :" + url.getPort());
-			System.out.println("url.getFile() :" + url.getFile());
-			System.out.println("url.getHost() :" + url.getHost());
-			System.out.println("url.getPath() :" + url.getPath());
-			System.out.println("url.getProtocol() :" + url.getProtocol());
-			System.out.println("url.getQuery() :" + url.getQuery());
-			System.out.println("url.getRef() :" + url.getRef());
-			System.out.println("url.getUserInfo() :" + url.getUserInfo());
-			System.out.println("url.toExternalForm() :" + url.toExternalForm());
-			System.out.println("url.toURI() :" + url.toURI());
+//	url 객체 생성
+		URL url = new URL("https://www.google.com/");
+//	url 객체에서 urlconnection 객체 얻기.
+		URLConnection urlCon = url.openConnection();
+//프로토콜이 http일 경우 HttpURLConnection객체로 캐스팅할 수 있다.
 
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		URL url = null;
-		BufferedReader input = null;
-		String address = "http://www.codechobo.com";
-		String line = "";
-		try {
-			url = new URL(address);
-			input = new BufferedReader(new InputStreamReader(url.openStream()));
+//urlconnection 구성
 
-			while ((line = input.readLine()) != null){
-				System.out.println(line);
-			}
-			input.close();
-
-		} catch (MalformedURLException ex) {
-			ex.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		try{
-			URL url_1 = new URL("https://www.naver.com/");
-			URLConnection conn = url_1.openConnection();
-			InputStream is = conn.getInputStream();
-			Scanner scan = new Scanner(is);
-
-			int lines = 1;
-			while(scan.hasNext()){
-				String str = scan.nextLine();
-				System.out.println((lines++)+":"+str);
-			}
-			scan.close();
-
-		} catch(MalformedURLException e){
-			System.out.println("the url address is in correct");
-			e.printStackTrace();
-		}catch (IOException e){
-			System.out.println("it can't connect to the web page");
-			e.printStackTrace();
-		}
+//헤더 필드 지필.
 
 
+//입력 스트임 가져오기 및 데이터 읽기.
+//내용 읽어오기.
+		InputStream inputStream = urlCon.getInputStream();
+		byte[] data = new byte[1024];
+		inputStream.read(data);
+
+
+//입력 스트림 예외 3가지.
+
+
+//출력 스트림 가져오기 및 데이터 쓰기.
+//서버 데이터를 보내기.
+		urlCon.setDoOutput(true);
+
+
+//연결을 닫으려면 close 메서드 호출.
 
 	}
 }
