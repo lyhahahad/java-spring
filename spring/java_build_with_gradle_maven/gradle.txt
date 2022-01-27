@@ -1,8 +1,9 @@
-빌드 방법과 기본적인 구성 및 작동 순서 방식 등.
-maven과 비교할 수 있는 기준들 위주로 학습
-빌드 코드가 더 효율적인가?
-구성은 어떻게 다른가?
-작동 순서는 어떠한가?
+하이라이트
+1.maven, gradle 등 빌드툴 사용이유 : 프로그램 공유시 라이브러리 압축해 전달할 필요없음, 개발자들이 모두 동일한 환경에서 개발할 필요가 없음.
+2.https://mvnrepository.com/ 에서 라이브러리 찾을 수 있음.
+3.위의 사이트에서 원하는 라이브러리의 정보를 gradle dependencies에 추가하면 사용할 수 있다.
+4.다운로드 위치는 사용자 폴더 아래에 .gradle폴더 하위에 원격으로 다운로드함.
+
 https://sharplee7.tistory.com/6
 gradle은 groovy로 개발돼 자바 개발자들에게 익숙한 빌드 도구이다.
 구글 안드로이드 사용자를 중심으로 최근 사용자가 많아지고 있다.
@@ -55,3 +56,14 @@ providedruntime : runtime시에만 필요하고 실행 환경에서 제공되는
 testimplementation : test시에 필요한 dependency 관리.
 
 https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_plugin_and_dependency_management
+
+https://linkeverything.github.io/study/springboot/add-library/
+라이브러리는 객체, 함수의 집합.
+자주 사용되는 것을 라이브러리로 만들면 개발 편의성을 향상시킬 수 있다.
+하지만 개별 라이브러리에 존재하는 오류나 버스 요소 때문에 프로그램에 부정적인 영향을 주기도 한다.
+과거에는 라이브러리를 lib, libs 폴더를 만들고 그 안에서 관리했다.
+이는 개발자들이 모두 동일한 환경에서 구축해야 동일한 결과를 얻을 수 있다는 한계점이 있었다.
+프로그램 자체를 공유해야 하는 경우 라이브러리들까지 모두 압축해 보내야 하는 불편함도 존재.
+이를 해결하기 위해 나온 것이 maven과 gradle이다.
+안드로이드는 gradle, springboot는 gradle, spring쪽에서는 비등비등하다.
+gradle을 사용하는 것이 일반적으로 더 좋다.(groovy 언어 사용으로 훨씬 관리가 편하다.)
