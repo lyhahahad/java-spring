@@ -5,3 +5,14 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation 'net.danlew:android.joda:2.9.9.3'
+    // https://mvnrepository.com/artifact/org.joda/joda-beans
+    implementation group: 'org.joda', name: 'joda-beans', version: '2.8.1'
+
+
+}
